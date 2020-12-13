@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.userController">
+   <children>
+      <AnchorPane layoutX="423.0" layoutY="82.0" prefHeight="442.0" prefWidth="363.0">
+         <children>
+            <TableView fx:id="ProductTable" layoutX="-14.0" layoutY="-67.0" onMouseClicked="#setCellValue" prefHeight="491.0" prefWidth="357.0">
+              <columns>
+                <TableColumn fx:id="col_id" prefWidth="100.0" text="Product ID" />
+                <TableColumn fx:id="col_name" prefWidth="174.0" text="Product Name" />
+                  <TableColumn fx:id="col_qty" prefWidth="88.0" text="Quantity" />
+              </columns>
+            </TableView>
+            <Text layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Product Requirement List">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <Pane prefHeight="50.0" prefWidth="800.0" style="-fx-background-color: #a3d2e4;" stylesheets="@application.css">
+         <children>
+            <Text fx:id="loggedUser" fill="#a83939" layoutX="411.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="RIGHT" wrappingWidth="290.13671875" />
+            <Button fx:id="logoutButton" layoutX="718.0" layoutY="9.0" mnemonicParsing="false" onAction="#logoutButtonPressed" prefHeight="33.0" prefWidth="75.0" text="Logout" />
+            <Button fx:id="myOrders" mnemonicParsing="false" onAction="#myOrdersButtonPressed" prefHeight="50.0" prefWidth="140.0" text="My Active Orders" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Text fill="#a83939" layoutX="514.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to NGO Helper :)">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <AnchorPane layoutX="14.0" layoutY="116.0" prefHeight="110.0" prefWidth="380.0">
+         <children>
+            <TextField fx:id="ProductID" editable="false" layoutX="14.0" layoutY="34.0" prefHeight="25.0" prefWidth="44.0" />
+            <TextField fx:id="ProductName" editable="false" layoutX="68.0" layoutY="34.0" prefHeight="25.0" prefWidth="140.0" />
+            <TextField fx:id="ProductQuantity" editable="false" layoutX="217.0" layoutY="34.0" prefHeight="25.0" prefWidth="62.0" />
+            <TextField fx:id="ProductRequiredQuantity" layoutX="291.0" layoutY="34.0" prefHeight="25.0" prefWidth="75.0" />
+            <Text layoutX="25.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID" />
+            <Text layoutX="127.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+            <Text layoutX="227.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qty. avl." />
+            <Text layoutX="297.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Donate Qty." />
+            <Button fx:id="add_to_cart" layoutX="279.0" layoutY="71.0" mnemonicParsing="false" onAction="#add_to_cartActionPerformed" prefHeight="33.0" prefWidth="84.0" text="Add to Cart" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="14.0" layoutY="224.0" prefHeight="333.0" prefWidth="380.0">
+         <children>
+            <TableView fx:id="cartTable" layoutY="30.0" prefHeight="305.0" prefWidth="380.0">
+              <columns>
+                <TableColumn fx:id="col1_id" prefWidth="75.0" text="Product ID" />
+                <TableColumn fx:id="col1_name" prefWidth="177.0" text="Product Name" />
+                  <TableColumn fx:id="col1_qty" prefWidth="127.0" text="Qty. Ordered" />
+              </columns>
+            </TableView>
+            <Button fx:id="userCheckout" layoutX="300.0" layoutY="341.0" mnemonicParsing="false" onAction="#userCheckoutActionPerformed" text="Checkout" />
+            <Button fx:id="resetCart" layoutX="216.0" layoutY="341.0" mnemonicParsing="false" onAction="#resetCartButtonPressed" text="Reset Cart" />
+            <Text layoutX="7.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="My Cart">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

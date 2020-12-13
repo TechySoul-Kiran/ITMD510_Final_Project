@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.manageUsersController">
+   <children>
+      <Pane prefHeight="50.0" prefWidth="830.0" style="-fx-background-color: #a3d2e4;" stylesheets="@application.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button fx:id="homeButton" layoutX="-1.0" mnemonicParsing="false" onAction="#homeButtonPressed" prefHeight="50.0" prefWidth="77.0" text="Home" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Button>
+            <Text fill="#1b167f" layoutX="282.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manage Users">
+               <font>
+                  <Font name="System Bold" size="23.0" />
+               </font>
+            </Text>
+            <Button fx:id="logoutButton" layoutX="715.0" layoutY="9.0" mnemonicParsing="false" onAction="#logoutButtonPressed" prefHeight="33.0" prefWidth="75.0" text="Logout" />
+            <Text fx:id="loggedUser" fill="#a83939" layoutX="412.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="RIGHT" wrappingWidth="290.13671875" />
+            <Text fill="#a83939" layoutX="515.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to NGO Helper :)">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <AnchorPane layoutX="368.0" layoutY="49.0" prefHeight="517.0" prefWidth="432.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="368.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="83.0">
+         <children>
+            <Text layoutX="3.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Users List" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <TableView fx:id="usersTable" layoutX="8.0" layoutY="24.0" onMouseClicked="#setCellValue" prefHeight="485.0" prefWidth="432.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="32.0">
+               <columns>
+                  <TableColumn fx:id="col_id" prefWidth="73.0" text="ID" />
+                  <TableColumn fx:id="col_name" prefWidth="136.0" text="Username" />
+                  <TableColumn fx:id="col_password" prefWidth="138.0" text="Password" />
+                  <TableColumn fx:id="col_type" prefWidth="84.0" text="Type" />
+               </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="115.0" prefHeight="311.0" prefWidth="355.0" AnchorPane.leftAnchor="0.0">
+         <children>
+            <TextField fx:id="userID" editable="false" layoutX="134.0" layoutY="55.0" prefHeight="25.0" prefWidth="44.0" />
+            <TextField fx:id="userName" layoutX="134.0" layoutY="88.0" prefHeight="25.0" prefWidth="140.0" />
+            <TextField fx:id="userPassword" layoutX="131.0" layoutY="124.0" prefHeight="25.0" prefWidth="140.0" />
+            <Text layoutX="100.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID" />
+            <Text layoutX="80.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+            <Text layoutX="69.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
+            <Button fx:id="addButton" layoutX="85.0" layoutY="230.0" mnemonicParsing="false" onAction="#addButtonPressed" prefHeight="25.0" prefWidth="62.0" text="Add" />
+            <Button fx:id="updateButton" layoutX="155.0" layoutY="230.0" mnemonicParsing="false" onAction="#updateButtonPressed" text="Update" />
+            <Button fx:id="deleteButton" layoutX="220.0" layoutY="230.0" mnemonicParsing="false" onAction="#deleteButtonPressed" text="Delete" />
+            <Button fx:id="clearFields" layoutX="144.0" layoutY="272.0" mnemonicParsing="false" onAction="#clearFieldsButtonPressed" text="Clear Fields" />
+            <Text layoutX="65.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Type" />
+            <RadioButton fx:id="userRadioButton" layoutX="136.0" layoutY="168.0" mnemonicParsing="false" onAction="#setRadioButtonAsUser" text="User" />
+            <RadioButton fx:id="adminRadioButton" layoutX="210.0" layoutY="168.0" mnemonicParsing="false" onAction="#setRadioButtonAsAdmin" text="admin" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.manageProductsController">
+   <children>
+      <Pane prefHeight="50.0" prefWidth="830.0" style="-fx-background-color: #a3d2e4;" stylesheets="@application.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button fx:id="homeButton" mnemonicParsing="false" onAction="#homeButtonPressed" prefHeight="50.0" prefWidth="77.0" text="Home" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Button>
+            <Button fx:id="logoutButton" layoutX="711.0" layoutY="9.0" mnemonicParsing="false" onAction="#logoutButtonPressed" prefHeight="33.0" prefWidth="75.0" text="Logout" />
+            <Text fill="#1b167f" layoutX="307.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manage Products">
+               <font>
+                  <Font name="System Bold" size="23.0" />
+               </font>
+            </Text>
+            <Text fx:id="loggedUser" fill="#a83939" layoutX="411.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="RIGHT" wrappingWidth="290.13671875" />
+            <Text fill="#a83939" layoutX="514.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to NGO Helper :)">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <AnchorPane layoutX="368.0" layoutY="49.0" prefHeight="517.0" prefWidth="432.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="368.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="83.0">
+         <children>
+            <Text layoutX="3.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Product Requirement List" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <TableView fx:id="ProductTable" layoutX="8.0" layoutY="24.0" onMouseClicked="#setCellValue" prefHeight="485.0" prefWidth="432.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="32.0">
+               <columns>
+                  <TableColumn fx:id="col_id" prefWidth="105.0" text="Product ID" />
+                  <TableColumn fx:id="col_name" prefWidth="213.0" text="Product Name" />
+                  <TableColumn fx:id="col_qty" prefWidth="111.0" text="Quantity" />
+               </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="14.0" layoutY="114.0" prefHeight="220.0" prefWidth="355.0">
+         <children>
+            <TextField fx:id="ProductID" editable="false" layoutX="25.0" layoutY="34.0" prefHeight="25.0" prefWidth="44.0" />
+            <TextField fx:id="ProductName" layoutX="89.0" layoutY="34.0" prefHeight="25.0" prefWidth="140.0" />
+            <TextField fx:id="ProductQuantity" layoutX="242.0" layoutY="34.0" prefHeight="25.0" prefWidth="62.0" />
+            <Text layoutX="41.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID" />
+            <Text layoutX="143.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+            <Text layoutX="250.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity" />
+            <Button fx:id="addButton" layoutX="63.0" layoutY="98.0" mnemonicParsing="false" onAction="#addButtonPressed" prefHeight="25.0" prefWidth="55.0" text="Add" />
+            <Button fx:id="updateButton" layoutX="133.0" layoutY="98.0" mnemonicParsing="false" onAction="#updateButtonPressed" text="Update" />
+            <Button fx:id="deleteButton" layoutX="203.0" layoutY="98.0" mnemonicParsing="false" onAction="#deleteButtonPressed" text="Delete" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
